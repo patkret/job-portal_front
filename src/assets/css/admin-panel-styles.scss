@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+
+$headerColor: #dddddd;
+$whiteFont: #FFFFFF;
+$headerFontColor: #9d9494;
+$sidebarFontSize: 36px;
+
+body {
+  background: #f5f8fa;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body, p, ul, ol, li, span {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poiret One', cursive;
+}
+
+button:focus {
+  outline: 0;
+}
+
+header {
+  background: $headerColor;
+  height: 80px;
+  width: 100%;
+  color: $headerFontColor;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-areas: "portal-name admin-panel-text";
+  align-items: center;
+  box-shadow: 1px 1px 3px #2a2a2a;
+  position: absolute;
+
+}
+
+.portal-name {
+  grid-area: portal-name;
+  img {
+    width: 240px;
+    height: auto;
+  }
+}
+
+.admin-panel-text {
+  font-weight: bolder;
+  font-size: 120%;
+}
+
+.content-container {
+  padding-top: 100px;
+}
+
+.sidebar-icon-min {
+  top: 100px;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  width: 50px;
+  height: 50px;
+  background: $headerColor;
+  border: none;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.sidebar {
+  height: 100vh;
+  position: absolute;
+}
+
+.sidebar-full {
+  width: 300px;
+  top: 90px;
+  margin-top: 82px;
+  font-size: $sidebarFontSize;
+  background-image: url("../img/background.png");
+  //background: #1b6d85;
+  grid-area: sidebar;
+  position: sticky;
+  z-index: 200;
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+  ul li {
+    align-self: center;
+    height: 55px;
+    width: 265px;
+    padding-left: 35px;
+    line-height: 55px;
+  }
+  ul li:hover {
+    background-color: #2a2a2a;
+    color: #fcf8e3;
+  }
+}
+
+.small-icon {
+  font-size: 0.6em;
+}
+
+.slide-right-enter-active {
+  transition: all .5s ease;
+}
+
+.slide-right-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-right-enter, .slide-right-leave-to {
+  transform: translateX(-100px);
+  opacity: 0;
+}
+
+.slide-left-enter-active {
+  transition: all .5s ease;
+}
+
+.slide-left-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-left-enter, .slide-left-leave-to {
+  transform: translateX(150px);
+  opacity: 0;
+}
+
+.icon-button {
+  margin: 0 0 0 250px;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #959ea5;
+}
+
+.active-link {
+  background-color: #DDDDEF;
+}
+
+.content-container {
+  display: grid;
+  grid-template-columns: 1fr 12fr 1fr;
+  grid-template-areas: ". view-container .";
+
+}
+
+.view-container {
+  grid-area: view-container;
+}
+
+.short-info-row {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 150px 1fr 150px 1fr 150px 1fr;
+  grid-template-areas: "col1 . col2 . col3 . col4";
+  grid-area: short-info-row;
+
+  .col-1, .col-2, .col-3, .col-4 {
+    width: 330px;
+    height: 330px;
+    border: 1px solid #a29d9d;
+    border-radius: 50%;
+    color: #e7e7e7;
+    box-shadow: 5px 3px 3px palevioletred;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    span:nth-child(2) {
+      font-size: 65pt;
+    }
+    span:nth-child(3) {
+      font-size: 18pt;
+    }
+  }
+
+  .col-1 {
+    background-color: #FF4A43;
+    grid-area: col1;
+  }
+  .col-2 {
+    grid-area: col2;
+    background-color: #A2D200;
+
+  }
+  .col-3 {
+    grid-area: col3;
+    background-color: #23BEEE;
+  }
+  .col-4 {
+    grid-area: col4;
+    background-color: #ee73a6;
+  }
+
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 4s;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+{
+  opacity: 0;
+}
+
+.component-container {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: 120px 1fr 250px;
+  grid-template-areas: "component-header" "short-info-row" " . ";
+
+  h2 {
+    grid-area: component-header;
+  }
+}
+
+.offer-icon, .users-icon, .juniors-icon, .technologies-icon{
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+}
+
+.offer-icon {
+  background-image: url("../img/icons/resume-and-cv.png");
+}
+
+.users-icon {
+  background-image: url("../img/icons/users.png");
+}
+.juniors-icon {
+  background-image: url("../img/icons/softtware-engineer.png");
+}
+.technologies-icon {
+  background-image: url("../img/icons/css-3.png");
+}
+
