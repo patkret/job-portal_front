@@ -38,6 +38,80 @@
                 </div>
             </transition>
         </div>
+        <div class="last-offers-list" v-if="fourthInfo">
+            <h1>Recent offers</h1>
+           <table>
+               <thead>
+               <tr>
+                   <th>Added</th>
+                   <th>Expires</th>
+                   <th>Offer name</th>
+                   <th>Technologies</th>
+                   <th>Status</th>
+                   <th>Actions</th>
+               </tr>
+               </thead>
+               <tbody>
+               <tr>
+                   <td>20.05.2018</td>
+                   <td>20.06.2018</td>
+                   <td>Junior Frontend Developer</td>
+                   <td>JavaScript, React, PHP</td>
+                   <td><span class="status-badge status-new">new</span></td>
+                   <td>Actions</td>
+               </tr>
+               <tr>
+                   <td>15.05.2018</td>
+                   <td>30.07.2018</td>
+                   <td>ABB Summer Internship</td>
+                   <td>Java, Maven</td>
+                   <td><span class="status-badge status-added">added</span></td>
+                   <td>Actions</td>
+               </tr>
+               <tr>
+                   <td>20.05.2018</td>
+                   <td>20.06.2018</td>
+                   <td>Junior Frontend Developer</td>
+                   <td>JavaScript, React, PHP</td>
+                   <td><span class="status-badge status-new">new</span></td>
+                   <td>Actions</td>
+               </tr>
+               <tr>
+                   <td>20.05.2018</td>
+                   <td>20.06.2018</td>
+                   <td>Junior Frontend Developer</td>
+                   <td>JavaScript, React, PHP</td>
+                   <td><span class="status-badge status-added">added</span></td>
+                   <td>Actions</td>
+               </tr>
+               <tr>
+                   <td>20.05.2018</td>
+                   <td>20.06.2018</td>
+                   <td>Junior Frontend Developer</td>
+                   <td>JavaScript, React, PHP</td>
+                   <td><span class="status-badge status-added">added</span></td>
+                   <td>Actions</td>
+               </tr>
+               <tr>
+                   <td>20.05.2018</td>
+                   <td>20.06.2018</td>
+                   <td>Junior Frontend Developer</td>
+                   <td>JavaScript, React, PHP</td>
+                   <td><span class="status-badge status-new">new</span></td>
+                   <td>Actions</td>
+               </tr>
+               <tr>
+                   <td>20.05.2018</td>
+                   <td>20.06.2018</td>
+                   <td>Junior Frontend Developer</td>
+                   <td>JavaScript, React, PHP</td>
+                   <td><span class="status-badge status-added">added</span></td>
+                   <td>Actions</td>
+               </tr>
+
+               </tbody>
+           </table>
+        </div>
     </div>
 </template>
 <script>

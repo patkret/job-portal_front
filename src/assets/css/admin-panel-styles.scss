@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
 
-$headerColor: #dddddd;
+$headerColor: #FFFAFF;
 $whiteFont: #FFFFFF;
-$headerFontColor: #9d9494;
+//$headerFontColor: #9d9494;
+$headerFontColor: #000000;
 $sidebarFontSize: 36px;
 
 body {
-  background: #f5f8fa;
+  background: #ffffff;
 }
 
 a {
@@ -28,6 +29,10 @@ button:focus {
   outline: 0;
 }
 
+button {
+  cursor: pointer;
+}
+
 header {
   background: $headerColor;
   height: 80px;
@@ -37,7 +42,7 @@ header {
   grid-template-columns: 250px 1fr;
   grid-template-areas: "portal-name admin-panel-text";
   align-items: center;
-  box-shadow: 1px 1px 3px #2a2a2a;
+  box-shadow: 1px 1px 5px #2a2a2a;
   position: absolute;
 
 }
@@ -78,14 +83,19 @@ header {
 
 .sidebar-full {
   width: 300px;
+  //height: 380px;
   top: 90px;
   margin-top: 82px;
   font-size: $sidebarFontSize;
-  background-image: url("../img/background.png");
-  //background: #1b6d85;
+  //background-image: url("../img/background.png");
+  //border-bottom-right-radius: 50%;
+  //border-top-right-radius: 50%;
+  background: $headerColor;
   grid-area: sidebar;
   position: sticky;
   z-index: 200;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   ul {
     display: flex;
     flex-direction: column;
@@ -161,17 +171,16 @@ header {
 .short-info-row {
   margin-top: 50px;
   display: grid;
-  grid-template-columns: 1fr 150px 1fr 150px 1fr 150px 1fr;
+  grid-template-columns: 1fr 120px 1fr 120px 1fr 120px 1fr;
   grid-template-areas: "col1 . col2 . col3 . col4";
   grid-area: short-info-row;
 
   .col-1, .col-2, .col-3, .col-4 {
-    width: 330px;
-    height: 330px;
-    border: 1px solid #a29d9d;
+    width: 310px;
+    height: 310px;
     border-radius: 50%;
     color: #e7e7e7;
-    box-shadow: 5px 3px 3px palevioletred;
+    box-shadow: 8px 8px 5px #d5d5d5;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -218,15 +227,37 @@ header {
   display: grid;
   justify-items: center;
   align-items: center;
-  grid-template-rows: 120px 1fr 250px;
+  grid-template-rows: 50px 1fr 2fr;
   grid-template-areas: "component-header" "short-info-row" " . ";
 
   h2 {
     grid-area: component-header;
   }
+
+  table {
+    width: 80vw;
+    font-size: 18pt;
+    border-collapse: collapse;
+  }
+
+  tr, th {
+    height: 70px;
+    border-bottom: 1px solid #8f8f8f;
+    text-align: left;
+
+  }
+
+  tr:nth-child(2n) {
+    background-color: #eaedee;
+  }
+
+  //tbody tr:hover{
+  //  background-color: #B8B500;
+  //  color: #fcf8e3;
+  //}
 }
 
-.offer-icon, .users-icon, .juniors-icon, .technologies-icon{
+.offer-icon, .users-icon, .juniors-icon, .technologies-icon {
   width: 64px;
   height: 64px;
   background-repeat: no-repeat;
@@ -239,10 +270,84 @@ header {
 .users-icon {
   background-image: url("../img/icons/users.png");
 }
+
 .juniors-icon {
   background-image: url("../img/icons/softtware-engineer.png");
 }
+
 .technologies-icon {
   background-image: url("../img/icons/css-3.png");
+}
+
+.custom-button {
+  width: 90px;
+  height: 90px;
+  background-color: inherit;
+  color: gray();
+  border: none;
+  cursor: pointer;
+  box-shadow: 1px 5px 5px #dddddd;
+  border-radius: 50%;
+  font-size: 110%;
+  justify-self: start;
+  margin-left: 50px;
+}
+
+.custom-button:hover {
+  color: yellowgreen;
+}
+
+.status-badge {
+  width: 65px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: orangered;
+  padding: 5px 10px 5px 10px;
+  line-height: 25px;
+}
+
+.status-new {
+  background-color: #BCD42A;
+}
+
+.status-added {
+  background-color: #4bb1b1;
+  color: #ffffff;
+}
+
+.primary-button {
+  background-color: transparent;
+  font-size: 18px;
+  border: none;
+  width: 80px;
+  height: 80px;
+  box-shadow: 0 5px 10px #DFDFDF;
+  border-radius: 50%;
+}
+
+.action-button {
+  border-radius: 5px;
+  width: 35px;
+  height: 35px;
+  border: none;
+  background: transparent;
+}
+
+.edit {
+  color: #58A4B0;
+}
+
+.delete {
+  color: orangered;
+}
+
+.validation-info {
+  color: orangered;
+}
+
+.not-valid {
+  border-bottom: 1px solid orangered !important;
+  margin-bottom: 8px;
+
 }
 

@@ -15,7 +15,7 @@
                         <button class="icon-button small-icon" @click="toggleSidebar = !toggleSidebar"><i
                                 class="fa fa-chevron-left fa-1x"></i></button>
                         <ul>
-                            <router-link v-for="route in routes" :to="route.path">
+                            <router-link v-for="route in routes" :to="route.path" :key="route.name">
                                 <li :class="{'link': true, 'active-link': activeRoute === route.path }"
                                     @click="activeRoute = route.path">
                                     {{route.name}}
@@ -28,7 +28,7 @@
                     <i class="fa fa-chevron-right"></i>
                 </button>
             </div>
-            <section class="content-container">
+            <section class="content-container" @click="toggleSidebar = false">
                 <div class="view-container">
                     <router-view/>
                 </div>
